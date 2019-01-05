@@ -132,6 +132,25 @@ class ProductsController extends Controller
 
 
     public function deleteProductImage($id = null){
+//        Get Product Image Name
+        $productImage = Product::where(['id' => $id])->first();
+
+//        Get Product Image Paths
+
+        $large_image_path = 'images/backend_images/products/large/';
+        $medium_image_path = 'images/backend_images/products/medium/';
+        $small_image_path = 'images/backend_images/products/small/';
+
+        if(file_exists($large_image_path.$productImage->image)){
+            unlink($large_image_path.$productImage->image);
+        }
+        if(file_exists($medium_image_path.$productImage->image)){
+            unlink($medium_image_path.$productImage->image);
+        }
+        if(file_exists($small_image_path.$productImage->image)){
+            unlink($small_image_path.$productImage->image);
+        }
+
         Product::where(['id' => $id])->update(['image' => '']);
         return redirect()->back()->with('flash_message_success', 'Product Image has been Deleted successfully');
     }
@@ -204,6 +223,13 @@ class ProductsController extends Controller
         return view ('products.listing')->with(compact('categoryDetails','productsAll','categories'));
     }
 
+
+    public function product($id = null){
+        $productDetails = Product::where('id', $id)->first();
+        $categories = Category::with('categories')->where(['parent_id' => 0])->get();
+
+        return view ('products.detail')->with(compact('productDetails', 'categories'));
+    }
 
 
 

@@ -13,6 +13,7 @@
 
 Route::get('/', 'IndexController@index');
 Route::get('/products/{url}', 'ProductsController@products');
+Route::get('/product/{id}', 'ProductsController@product');
 
 
 Route::match(['get', 'post'], '/admin', 'AdminController@login');
