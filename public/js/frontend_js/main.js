@@ -28,3 +28,30 @@ $(document).ready(function(){
 		});
 	});
 });
+
+$(document).ready(function(){
+     $("#selSize").change(function () {
+     	// alert("test");
+		 var idSize = $(this).val();
+		 // alert(idSize);
+		 if(idSize == ""){
+		 	return false;
+		 }
+
+		 $.ajax({
+             headers: {
+                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+             },
+			 type: 'post',
+			 url: 'get-product-price',
+			 data: {idSize:idSize},
+			 success: function(resp){
+			 	// alert(resp);
+				 $("#getPrice").html("NPR" + resp);
+			 }, error: function(){
+			 	alert("Error");
+			 }
+		 });
+     });
+	});
+

@@ -29,6 +29,13 @@ class ProductsController extends Controller
             } else {
                 $product->description = '';
             }
+
+            if(!empty($data['care'])){
+                $product->care = $data['care'];
+            } else {
+                $product->care = '';
+            }
+
             $product->price = $data['price'];
             // upload image
             if($request->hasFile('image')){
@@ -100,7 +107,7 @@ class ProductsController extends Controller
                 $data['description'] = "";
             }
 
-            Product::where(['id'=>$id])->update(['category_id' => $data['category_id'],'product_name' => $data['product_name'],'product_code' => $data['product_code'],'product_color' => $data['product_color'],'description' => $data['description'], 'price' => $data['price'], 'image'=>$filename
+            Product::where(['id'=>$id])->update(['category_id' => $data['category_id'],'product_name' => $data['product_name'],'product_code' => $data['product_code'],'product_color' => $data['product_color'],'description' => $data['description'], 'care' => $data['care'] ,  'price' => $data['price'], 'image'=>$filename
             ]);
 
             return redirect()->back()->with('flash_message_success', 'Product Has been updated successfully');
@@ -225,10 +232,18 @@ class ProductsController extends Controller
 
 
     public function product($id = null){
-        $productDetails = Product::where('id', $id)->first();
+        $productDetails = Product::with('attributes')->where('id', $id)->first();
         $categories = Category::with('categories')->where(['parent_id' => 0])->get();
 
         return view ('products.detail')->with(compact('productDetails', 'categories'));
+    }
+
+    public function getProductPrice(Request $request){
+        $data = $request->all();
+//        echo "<pre>"; print_r($data); die;
+        $proArr = explode("-", $data['idSize']);
+        $proAttr = ProductAttribute::where(['product_id' => $proArr[0], 'size' => $proArr[1]])->first();
+        echo $proAttr->price;
     }
 
 

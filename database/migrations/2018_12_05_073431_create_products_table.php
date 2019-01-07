@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('product_code');
             $table->string('product_color');
             $table->text('description');
+            $table->text('care')->nullable();
             $table->float('price');
             $table->string('image')->nullable();
             $table->timestamps();
