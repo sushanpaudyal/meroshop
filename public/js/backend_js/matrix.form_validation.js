@@ -254,7 +254,7 @@ $(document).ready(function(){
                 confirmButtonText: "Yes, Delete it!"
             },
             function(){
-                window.location.href="/admin/"+deleteFunction+"/"+id;
+                window.location.href="/meroshop/public/admin/"+deleteFunction+"/"+id;
             });
 
     });
@@ -273,10 +273,12 @@ $(document).ready(function(){
                 confirmButtonText: "Yes, Delete it!"
             },
             function(){
-                window.location.href="/admin/"+deleteFunction+"/"+id;
+                window.location.href="/merosho/public/admin/"+deleteFunction+"/"+id;
             });
 
     });
+
+
 
     $(document).ready(function(){
         var maxField = 10; //Input fields increment limitation

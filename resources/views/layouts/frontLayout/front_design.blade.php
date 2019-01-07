@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Home | E-Shopper</title>
     <link href="{{asset('css/frontend_css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('css/frontend_css/font-awesome.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="{{asset('css/frontend_css/prettyPhoto.css')}}" rel="stylesheet">
     <link href="{{asset('css/frontend_css/price-range.css')}}" rel="stylesheet">
     <link href="{{asset('css/frontend_css/animate.css')}}" rel="stylesheet">

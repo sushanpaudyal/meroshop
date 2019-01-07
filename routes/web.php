@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'IndexController@index');
+Route::get('/', 'IndexController@index')->name('indexpage');
 Route::get('/products/{url}', 'ProductsController@products');
 Route::get('/product/{id}', 'ProductsController@product');
 //Get The Product Attribute Price
@@ -46,6 +46,8 @@ Route::group(['middleware' => ['auth']], function(){
 
 //    Product Attributes
     Route::match(['get', 'post'], '/admin/add-attribute/{id}', 'ProductsController@addAttributes');
+    Route::match(['get', 'post'], '/admin/add-images/{id}', 'ProductsController@addImages');
+
     Route::get('/admin/delete-attribute/{id}', 'ProductsController@deleteAttribute');
 });
 

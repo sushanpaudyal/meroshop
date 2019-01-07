@@ -57,9 +57,11 @@
 
                                         </td>
                                         <td class="center"><a href="{{url('/admin/edit-product/'.$product->id) }}" class="btn btn-primary btn-mini">Edit</a>
-                                            <a rel="{{$product->id}}" rel1="delete-product"<?php /* href="{{url('/admin/delete-product/'.$product->id)}}" */ ?> href="javascript:" class="btn btn-danger btn-mini deleteRecord">Delete</a>
+                                            <a rel="{{$product->id}}" rel1="delete-product" href="javascript:" class="btn btn-danger btn-mini deleteRecord">Delete</a>
                                             <a href="#myModal{{ $product->id }}" class="btn btn-success btn-mini" data-toggle="modal">View</a>
-                                            <a href="{{url('/admin/add-attribute/'.$product->id)}}" class="btn btn-success btn-mini" >Add</a>
+                                            <a href="{{url('/admin/add-attribute/'.$product->id)}}" class="btn btn-warning btn-mini" title="Add Attributes">Add</a>
+                                            <a href="{{url('/admin/add-images/'.$product->id)}}" class="btn btn-info btn-mini" title="Add Images" >Images</a>
+
                                         </td>
                                     </tr>
                                     <!-- Modal Popup -->

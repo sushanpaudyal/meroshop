@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Product;
+use App\ProductsImage;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use Session;
@@ -180,6 +181,18 @@ class ProductsController extends Controller
             // echo "<pre>"; print_r($data); die;
             foreach($data['sku'] as $key => $val){
                 if(!empty($val)){
+
+                     // SKU Check
+                    $attrCountSKU = ProductAttribute::where('sku', $val)->count();
+                    if($attrCountSKU > 0){
+                        return redirect('/admin/add-attribute/'.$id)->with('flash_message_error', 'SKU Already Exists');
+                    }
+                    // Size Check
+                    $attrCountSizes = ProductAttribute::where(['product_id' => $id, 'size' => $data['size'][$key]])->count();
+                    if($attrCountSizes > 0){
+                        return redirect('/admin/add-attribute/'.$id)->with('flash_message_error', ' "'.$data['size'][$key].' Size Already Exists');
+                    }
+
                     $attribute = new ProductAttribute;
                     $attribute->product_id = $id;
                     $attribute->sku = $val;
@@ -192,6 +205,38 @@ class ProductsController extends Controller
             return redirect('/admin/add-attribute/'.$id)->with('flash_message_success', 'Attribute added successfully');
         }
         return view ('admin.products.add_attributes')->with(compact('productDetails'));
+    }
+
+
+    public function addImages(Request $request, $id = null){
+        $productDetails = Product::with('attributes')->where(['id'=>$id])->first();
+
+
+        if($request->isMethod('post')){
+            $data = $request->all();
+//            echo "<pre>"; print_r($data); die;
+            if($request->hasFile('image')){
+                $files = $request->file('image');
+                foreach($files as $file){
+                    $image = new ProductsImage;
+                    $extension = $file->getClientOriginalExtension();
+                    $filename = rand(111,99999).'.'.$extension;
+
+                    $large_image_path = 'images/backend_images/products/large/'.$filename;
+                    $medium_image_path = 'images/backend_images/products/medium/'.$filename;
+                    $small_image_path = 'images/backend_images/products/small/'.$filename;
+                    Image::make($file)->save($large_image_path);
+                    Image::make($file)->resize(600,600)->save($medium_image_path);
+                    Image::make($file)->resize(300,300)->save($small_image_path);
+                    $image->image = $filename;
+                    $image->product_id = $data['product_id'];
+                    $image->save();
+                }
+
+            }
+            return redirect('admin/add-images/'.$id)->with('flash_message_success', 'Images Hass Been Added Successfully');
+        }
+        return view ('admin.products.add_images')->with(compact('productDetails'));
     }
 
 
