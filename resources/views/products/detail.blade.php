@@ -11,38 +11,30 @@
                     <div class="product-details"><!--product-details-->
                         <div class="col-sm-5">
                             <div class="view-product">
-                                <img src="{{asset('images/backend_images/products/medium/'.$productDetails->image)}}" alt="" />
+                                <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails">
+                                    <a href="{{asset('images/backend_images/products/large/'.$productDetails->image)}}">
+                                <img style="width: 100%;" class="mainImage" src="{{asset('images/backend_images/products/medium/'.$productDetails->image)}}" alt="" />
+                                    </a>
+                                </div>
                                 {{--<h3>ZOOM</h3>--}}
                             </div>
                             <div id="similar-product" class="carousel slide" data-ride="carousel">
 
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner">
-                                    <div class="item active">
-                                        <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-                                        <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-                                        <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
+                                    <div class="item active thumbnails">
+                                        @foreach($productAltImages as $altImage)
+                                            <a href="{{asset('images/backend_images/products/large/'.$altImage->image)}}">
+                                       <img class="changeImage" src="{{asset('images/backend_images/products/small/'.$altImage->image)}}" alt="" style="width:80px;">
+                                            </a>
+                                            @endforeach
                                     </div>
-                                    <div class="item">
-                                        <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-                                        <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-                                        <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
-                                    </div>
-                                    <div class="item">
-                                        <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-                                        <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-                                        <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
-                                    </div>
+
+
 
                                 </div>
 
-                                <!-- Controls -->
-                                <a class="left item-control" href="#similar-product" data-slide="prev">
-                                    <i class="fa fa-angle-left"></i>
-                                </a>
-                                <a class="right item-control" href="#similar-product" data-slide="next">
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
+
                             </div>
 
                         </div>

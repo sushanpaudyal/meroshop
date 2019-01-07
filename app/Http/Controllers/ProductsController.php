@@ -236,7 +236,9 @@ class ProductsController extends Controller
             }
             return redirect('admin/add-images/'.$id)->with('flash_message_success', 'Images Hass Been Added Successfully');
         }
-        return view ('admin.products.add_images')->with(compact('productDetails'));
+
+        $productsImages = ProductsImage::where(['product_id' => $id])->get();
+        return view ('admin.products.add_images')->with(compact('productDetails', 'productsImages'));
     }
 
 
@@ -280,7 +282,9 @@ class ProductsController extends Controller
         $productDetails = Product::with('attributes')->where('id', $id)->first();
         $categories = Category::with('categories')->where(['parent_id' => 0])->get();
 
-        return view ('products.detail')->with(compact('productDetails', 'categories'));
+        $productAltImages = ProductsImage::where(['product_id' => $id])->get();
+
+        return view ('products.detail')->with(compact('productDetails', 'categories', 'productAltImages'));
     }
 
     public function getProductPrice(Request $request){
@@ -289,6 +293,28 @@ class ProductsController extends Controller
         $proArr = explode("-", $data['idSize']);
         $proAttr = ProductAttribute::where(['product_id' => $proArr[0], 'size' => $proArr[1]])->first();
         echo $proAttr->price;
+    }
+
+    public function deleteAltImage($id = null){
+        $productImage = ProductsImage::where(['id' => $id])->first();
+
+
+        $large_image_path = 'images/backend_images/products/large/';
+        $medium_image_path = 'images/backend_images/products/medium/';
+        $small_image_path = 'images/backend_images/products/small/';
+
+        if(file_exists($large_image_path.$productImage->image)){
+            unlink($large_image_path.$productImage->image);
+        }
+        if(file_exists($medium_image_path.$productImage->image)){
+            unlink($medium_image_path.$productImage->image);
+        }
+        if(file_exists($small_image_path.$productImage->image)){
+            unlink($small_image_path.$productImage->image);
+        }
+
+        ProductsImage::where(['id' => $id])->delete();
+        return redirect()->back()->with('flash_message_success', 'Product Alternate Image has been Deleted successfully');
     }
 
 

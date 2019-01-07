@@ -96,7 +96,7 @@
                                     @foreach($mainCategories as $cat)
                                     <li><a href="{{url('products/'.$cat->url)}}">{{$cat->name}}</a></li>
                                     @endforeach
-                                    <
+
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
