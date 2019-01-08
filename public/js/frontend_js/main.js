@@ -29,33 +29,40 @@ $(document).ready(function(){
 	});
 });
 
-$(document).ready(function(){
-	// Change Price with Size
-     $("#selSize").change(function () {
-     	// alert("test");
-		 var idSize = $(this).val();
-		 // alert(idSize);
-		 if(idSize == ""){
-		 	return false;
-		 }
+$(document).ready(function () {
+    $("#selSize").change(function () {
+        var idSize = $(this).val();
+        if(idSize == ""){
+        	return false;
+		}
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type:'post',
+            url:'get-product-price',
+            data:{idSize:idSize},
+            success:function(resp) {
+                var arr = resp.split('#');
+                $("#getPrice").html("Rs. "+ arr[0]);
+                $("#price").val(arr[0]);
 
-		 $.ajax({
-             headers: {
-                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-             },
-			 type: 'post',
-			 url: 'get-product-price',
-			 data: {idSize:idSize},
-			 success: function(resp){
-			 	// alert(resp);
-				 $("#getPrice").html("NPR" + resp);
-			 }, error: function(){
-			 	alert("Error");
-			 }
-		 });
-     });
+                //Send the updated price based on size of the product
+                if (arr[1] == 0){
+                    $("#cartButton").hide();
+                    $("#availability").text(" Out of Stock").css('color', 'red');
+                    $("#emptySize").text('The product is out of stock').css('color', 'red');
+                }else {
+                    $("#cartButton").show();
+                    $("#availability").text(" In Stock").css('color', 'green');
+                    $("#emptySize").text('').css('color', 'red');
+                }
+            },error:function (resp) {
 
-	});
+            }
+        });
+    });
+});
 // Replace Main Image with aleternate Image
 
 $(document).ready(function(){

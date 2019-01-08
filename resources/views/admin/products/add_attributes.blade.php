@@ -88,6 +88,8 @@
                             <h5> View Attribute</h5>
                         </div>
                         <div class="widget-content nopadding">
+                            <form action="{{url('/admin/edit-attribute/'.$productDetails->id)}}" method="post">
+                                @csrf
                             <table class="table table-bordered data-table">
                                 <thead>
                                 <tr>
@@ -102,13 +104,14 @@
                                 <tbody>
                                 @foreach($productDetails['attributes'] as $attribute)
                                     <tr class="gradeX">
-                                        <td>{{$attribute->id}}</td>
+                                        <td><input type="hidden" name="idAttr[]" value="{{$attribute->id}}"> {{$attribute->id}}</td>
                                         <td>{{$attribute->sku}}</td>
                                         <td>{{$attribute->size}}</td>
-                                        <td>{{$attribute->price}}</td>
-                                        <td>{{$attribute->stock}}</td>
+                                        <td><input type="text" name="price[]" value="{{$attribute->price}}"></td>
+                                        <td><input type="text" name="stock[]" value="{{$attribute->stock}}"></td>
 
                                         <td class="center">
+                                            <input type="submit" value="Update" class="btn btn-primary btn-mini">
                                             <a href="javascript:" rel="{{$attribute->id}}" rel1="delete-attribute" class="btn btn-danger btn-mini deleteRecord">Delete</a>
                                         </td>
 
@@ -118,6 +121,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
+                            </form>
                         </div>
                     </div>
                 </div>

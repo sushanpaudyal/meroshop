@@ -284,7 +284,9 @@ class ProductsController extends Controller
 
         $productAltImages = ProductsImage::where(['product_id' => $id])->get();
 
-        return view ('products.detail')->with(compact('productDetails', 'categories', 'productAltImages'));
+         $total_stock = ProductAttribute::where('product_id', $id)->sum('stock');
+
+        return view ('products.detail')->with(compact('productDetails', 'categories', 'productAltImages', 'total_stock'));
     }
 
     public function getProductPrice(Request $request){
@@ -293,6 +295,8 @@ class ProductsController extends Controller
         $proArr = explode("-", $data['idSize']);
         $proAttr = ProductAttribute::where(['product_id' => $proArr[0], 'size' => $proArr[1]])->first();
         echo $proAttr->price;
+        echo "#";
+        echo $proAttr->stock;
     }
 
     public function deleteAltImage($id = null){
@@ -315,6 +319,18 @@ class ProductsController extends Controller
 
         ProductsImage::where(['id' => $id])->delete();
         return redirect()->back()->with('flash_message_success', 'Product Alternate Image has been Deleted successfully');
+    }
+
+    public function editAttributes(Request $request, $id = null){
+        if($request->isMethod('post')){
+            $data = $request->all();
+//            echo "<pre>"; print_r($data); die;
+
+            foreach($data['idAttr'] as $key => $attr){
+                ProductAttribute::where(['id' => $data['idAttr'][$key]])->update(['price' => $data['price'][$key], 'stock' => $data['stock'][$key]]);
+            }
+            return redirect()->back()->with('flash_message_success', 'Products Attributes Updated Successfully');
+        }
     }
 
 
