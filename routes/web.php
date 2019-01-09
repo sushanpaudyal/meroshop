@@ -16,6 +16,8 @@ Route::get('/products/{url}', 'ProductsController@products');
 Route::get('/product/{id}', 'ProductsController@product')->name('product');
 //Add To Cart Route
 Route::match(['get', 'post'], '/add-cart', 'ProductsController@addtoCart')->name('cart');
+//Cart Page
+Route::match(['get', 'post'], '/cart', 'ProductsController@cart')->name('viewcart');
 //Get The Product Attribute Price
 Route::post('/product/get-product-price', 'ProductsController@getProductPrice');
 
