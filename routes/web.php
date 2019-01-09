@@ -14,6 +14,8 @@
 Route::get('/', 'IndexController@index')->name('indexpage');
 Route::get('/products/{url}', 'ProductsController@products');
 Route::get('/product/{id}', 'ProductsController@product')->name('product');
+//Add To Cart Route
+Route::match(['get', 'post'], '/add-cart', 'ProductsController@addtoCart')->name('cart');
 //Get The Product Attribute Price
 Route::post('/product/get-product-price', 'ProductsController@getProductPrice');
 

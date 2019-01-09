@@ -39,7 +39,16 @@
 
                         </div>
                         <div class="col-sm-7">
-                            <div class="product-information"><!--/product-information-->
+                            <form action="{{url('add-cart')}}" name="addtocartForm" method="post" id="addtoCart" >
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{$productDetails->id}}">
+                                <input type="hidden" name="product_name" value="{{$productDetails->product_name}}">
+                                <input type="hidden" name="product_code" value="{{$productDetails->product_code}}">
+                                <input type="hidden" name="product_color" value="{{$productDetails->product_color}}">
+                                <input type="hidden" id="price" name="price" value="{{$productDetails->price}}">
+
+
+                                <div class="product-information"><!--/product-information-->
                                 <img src="images/product-details/new.jpg" class="newarrival" alt="" />
                                 <h2>{{$productDetails->product_name}}</h2>
                                 <p>Code: {{$productDetails->product_code}}</p>
@@ -54,9 +63,9 @@
                                 <span>
 									<span id="getPrice">NPR {{$productDetails->price}}</span>
 									<label>Quantity:</label>
-									<input type="text" value="1" />
+									<input type="text" value="1" name="quantity"/>
                                     @if($total_stock > 0)
-									<button type="button" class="btn btn-fefault cart cartButton" id="cartButton">
+									<button type="submit" class="btn btn-fefault cart cartButton" id="cartButton">
 										<i class="fa fa-shopping-cart"></i>
 										Add to cart
 									</button>
@@ -66,6 +75,7 @@
                                 <p><b>Condition:</b> New</p>
                                 <a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
                             </div><!--/product-information-->
+                            </form>
                         </div>
                     </div><!--/product-details-->
 
