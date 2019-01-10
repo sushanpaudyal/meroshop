@@ -18,6 +18,11 @@ Route::get('/product/{id}', 'ProductsController@product')->name('product');
 Route::match(['get', 'post'], '/add-cart', 'ProductsController@addtoCart')->name('cart');
 //Cart Page
 Route::match(['get', 'post'], '/cart', 'ProductsController@cart')->name('viewcart');
+
+Route::get('/cart/delete-product/{id}', 'ProductsController@deleteCartProduct')->name('cart.delete');
+
+Route::get('/cart/update-quantity/{id}/{quantity}', 'ProductsController@updateCartQuantity')->name('cartupdate.quantity');
+
 //Get The Product Attribute Price
 Route::post('/product/get-product-price', 'ProductsController@getProductPrice');
 
