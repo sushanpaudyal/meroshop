@@ -5,7 +5,7 @@
     <div id="content">
         <div id="content-header">
             <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">View Products</a> </div>
-            <h1>Products</h1>
+            <h1>Coupons</h1>
             @if(Session::has('flash_message_error'))
                 <div class="alert alert-error alert-block">
                     <button type="button" class="close" data-dismiss="alert">x</button>
@@ -25,7 +25,7 @@
                 <div class="span12">
                     <div class="widget-box">
                         <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-                            <h5>Products</h5>
+                            <h5>Coupons</h5>
                         </div>
                         <div class="widget-content nopadding">
                             <table class="table table-bordered data-table">
