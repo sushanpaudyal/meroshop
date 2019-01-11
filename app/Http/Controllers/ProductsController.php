@@ -378,7 +378,9 @@ class ProductsController extends Controller
         if($countProducts > 0){
             return redirect()->back()->with('flash_message_error', 'Product Already Exists in the Cart');
         } else  {
-            DB::table('cart')->insert(['product_id' => $data['product_id'], 'product_name' => $data['product_name'], 'product_code' => $data['product_code'], 'product_color' => $data['product_color'], 'price' => $data['price'], 'size' => $sizeArr[1], 'quantity' => $data['quantity'], 'user_email' => $data['user_email'], 'session_id' => $session_id
+            $getSKU = ProductAttribute::select('sku')->where(['product_id' => $data['product_id'], 'size' => $sizeArr[1]])->first();
+
+            DB::table('cart')->insert(['product_id' => $data['product_id'], 'product_name' => $data['product_name'], 'product_code' => $getSKU->sku, 'product_color' => $data['product_color'], 'price' => $data['price'], 'size' => $sizeArr[1], 'quantity' => $data['quantity'], 'user_email' => $data['user_email'], 'session_id' => $session_id
             ]);
         }
 
@@ -403,8 +405,18 @@ class ProductsController extends Controller
     }
 
     public function updateCartQuantity($id = null, $quantity = null){
-        DB::table('cart')->where('id', $id)->increment('quantity', $quantity);
-        return redirect('cart')->with('flash_message_success', 'Product Has Quantity has Been Updated');
+
+        $getCartDetails = DB::table('cart')->where('id', $id)->first();
+        $getAttributeStock = ProductAttribute::where('sku', $getCartDetails->product_code)->first();
+
+        $updated_quantity = $getCartDetails->quantity+$quantity;
+        if($getAttributeStock->stock >= $updated_quantity){
+            DB::table('cart')->where('id', $id)->increment('quantity', $quantity);
+            return redirect('cart')->with('flash_message_success', 'Product Has Quantity has Been Updated');
+        } else {
+            return redirect('cart')->with('flash_message_error', 'Product Required Quantity is Out of Stock');
+        }
+
     }
 
 }
