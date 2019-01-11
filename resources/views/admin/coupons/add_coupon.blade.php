@@ -26,7 +26,7 @@
                             <h5>Insert Coupons</h5>
                         </div>
                         <div class="widget-content nopadding">
-                            <form class="form-horizontal" method="POST" action="{{url('/admin/add-coupon')}}" novalidate="novalidate" name="add_coupon" id="add_coupon" enctype="multipart/form-data">
+                            <form class="form-horizontal" method="POST" action="{{url('/admin/add-coupon')}}"  name="add_coupon" id="add_coupon">
                                 {{ csrf_field() }}
 
                                 <div class="control-group">
@@ -42,21 +42,21 @@
                                 <div class="control-group">
                                     <label class="control-label">Coupon Code</label>
                                     <div class="controls">
-                                        <input type="text" name="coupon_code" id="coupon_code">
+                                        <input type="text" name="coupon_code" id="coupon_code" minlength="5" maxlength="15" required>
                                     </div>
                                 </div>
 
                                 <div class="control-group">
                                     <label class="control-label">Amount</label>
                                     <div class="controls">
-                                        <input type="text" name="amount" id="amount">
+                                        <input type="number" name="amount" id="amount" required min="1">
                                     </div>
                                 </div>
 
                                 <div class="control-group">
                                     <label class="control-label">Expiry Date</label>
                                     <div class="controls">
-                                        <input type="text" name="expiry_date" id="expiry_date">
+                                        <input type="text" name="expiry_date" id="expiry_date" autocomplete="off" required>
                                     </div>
                                 </div>
 
