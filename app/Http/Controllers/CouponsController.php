@@ -17,7 +17,13 @@ class CouponsController extends Controller
             $coupon->expiry_date = $data['expiry_date'];
             $coupon->status = $data['status'];
             $coupon->save();
+            return redirect()->route('view.coupon')->with('flash_message_success', 'Coupons Inserted Successfully');
          }
         return view ('admin.coupons.add_coupon');
+    }
+
+    public function viewCoupons(){
+        $data = Coupon::latest()->get();
+        return view('admin.coupons.view_coupons', compact('data'));
     }
 }
