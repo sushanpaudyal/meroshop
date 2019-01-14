@@ -254,7 +254,7 @@ $(document).ready(function(){
                 confirmButtonText: "Yes, Delete it!"
             },
             function(){
-                window.location.href="/admin/"+deleteFunction+"/"+id;
+                window.location.href="/meroshop/public/admin/"+deleteFunction+"/"+id;
             });
 
     });
@@ -273,7 +273,7 @@ $(document).ready(function(){
                 confirmButtonText: "Yes, Delete it!"
             },
             function(){
-                window.location.href="/merosho/public/admin/"+deleteFunction+"/"+id;
+                window.location.href="/meroshop/public/admin/"+deleteFunction+"/"+id;
             });
 
     });
