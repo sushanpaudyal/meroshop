@@ -26,6 +26,8 @@ Route::get('/cart/update-quantity/{id}/{quantity}', 'ProductsController@updateCa
 //Get The Product Attribute Price
 Route::post('/product/get-product-price', 'ProductsController@getProductPrice');
 
+Route::post('/cart/apply-coupon', 'ProductsController@applyCoupon')->name('apply.coupon');
+
 Route::match(['get', 'post'], '/admin', 'AdminController@login');
 
 Auth::routes();
