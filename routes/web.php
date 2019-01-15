@@ -34,6 +34,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//Register/Login
+
+Route::match(['get', 'post'], '/login-register', 'UsersController@register')->name('login.register');
+
 
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/admin/dashboard', 'AdminController@dashboard');
