@@ -421,12 +421,49 @@ class ProductsController extends Controller
     }
 
     public function applyCoupon(Request $request){
+
+        Session::forget('CouponAmount');
+        Session::forget('CouponCode');
+
         $data = $request->all();
         $couponCount = Coupon::where('coupon_code', $data['coupon_code'])->count();
         if($couponCount == 0){
-            return redirect()->back()->with('flash_message_error', 'Coupon Is Invalid');
+            return redirect()->back()->with('flash_message_error', 'Coupon Does Not Exists');
         } else {
-            echo "Success"; die;
+            $couponDetails = Coupon::where('coupon_code', $data['coupon_code'])->first();
+            // if coupon is inactive
+            if($couponDetails->status == 0){
+                return redirect()->back()->with('flash_message_error', 'This Coupon is Not Active');
+            }
+
+            // if coupon is expired
+            $expiry_date = $couponDetails->expiry_date;
+            $current_date = date('Y-m-d');
+            if($expiry_date < $current_date){
+                return redirect()->back()->with('flash_message_error', 'This Coupon Has Expired');
+            }
+
+            //After The coupon is valid for dicount check if amount type or fixed or percentage
+             //getting total amount from cart
+               $session_id = Session::get('session_id');
+            $userCart = DB::table('cart')->where(['session_id' => $session_id])->get();
+            $total_amount = 0;
+            foreach($userCart as  $item){
+                $total_amount = $total_amount + ($item->price * $item->quantity);
+            }
+
+
+            if($couponDetails->amount_type == "Fixed"){
+                $couponAmount = $couponDetails->amount;
+            } else {
+                $couponAmount = $total_amount * ($couponDetails->amount / 100);
+            }
+
+            // Add Coupon Code and Amount in session
+            Session::put('CouponAmount', $couponAmount);
+            Session::put('CouponCode', $data['coupon_code']);
+            return redirect()->back()->with('flash_message_success', 'Coupon Code Successfully Applied');
+
         }
     }
 
