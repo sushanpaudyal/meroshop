@@ -3,14 +3,14 @@
     <ul>
         <li class="active"><a href="{{url('admin/dashboard')}}"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
 
-        <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Categories</span> <span class="label label-important">3</span></a>
+        <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Categories</span> </a>
             <ul>
                 <li><a href="{{url('/admin/add-category')}}">Add Category</a></li>
                 <li><a href="{{url('/admin/view-categories')}}">View Category</a></li>
             </ul>
         </li>
 
-        <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Products</span> <span class="label label-important">3</span></a>
+        <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Products</span> </a>
             <ul>
                 <li><a href="{{url('/admin/add-product')}}">Add Product</a></li>
                 <li><a href="{{url('/admin/view-products')}}">View Product</a></li>
@@ -18,10 +18,17 @@
         </li>
 
 
-        <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Coupons</span> <span class="label label-important">3</span></a>
+        <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Coupons</span> </a>
             <ul>
                 <li><a href="{{url('/admin/add-coupon')}}">Add Coupon</a></li>
                 <li><a href="{{url('/admin/view-coupons')}}">View Coupons</a></li>
+            </ul>
+        </li>
+
+        <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Banners</span> </a>
+            <ul>
+                <li><a href="{{url('/admin/add-banner')}}">Add Banner</a></li>
+                <li><a href="{{url('/admin/view-banners')}}">View Banner</a></li>
             </ul>
         </li>
 
