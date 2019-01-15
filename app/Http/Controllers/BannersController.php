@@ -45,4 +45,45 @@ class BannersController extends Controller
         $banners = Banner::all();
         return view ('admin.banners.view_banners', compact('banners'));
     }
+
+    public function editBanner(Request $request, $id = null){
+        $bannerDetails = Banner::where('id', $id)->first();
+        if($request->isMethod('post')){
+            $data = $request->all();
+
+            if($request->hasFile('image')){
+                $image_tmp = Input::file('image');
+                if($image_tmp->isValid()){
+                    $extension = $image_tmp->getClientOriginalExtension();
+                    $filename = rand(111,99999).'.'.$extension;
+                    $banner_image_path = 'images/frontend_images/banners/'.$filename;
+                    // Resize Image Code
+                    Image::make($image_tmp)->resize(1140, 340)->save($banner_image_path);
+                }
+            } else {
+                $filename = $data['current_image'];
+            }
+
+            if(empty($data['status'])){
+                $status = 0;
+            } else {
+                $status = 1;
+            }
+
+            $bannerDetails->title = $data['title'];
+            $bannerDetails->link = $data['link'];
+            $bannerDetails->status = $data['status'];
+            $bannerDetails->image = $filename;
+            $bannerDetails->save();
+            return redirect()->back()->with('flash_message_success', 'Banner Updates Successfully');
+
+
+        }
+        return view ('admin.banners.edit_banner', compact('bannerDetails'));
+    }
+
+    public function deleteBanner($id){
+        Banner::where(['id' => $id])->delete();
+        return redirect()->back()->with('flash_message_error', 'Banner Delete Successfully');
+    }
 }
