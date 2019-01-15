@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="245d0799-959e-4a7b-a6b4-c7f4cbbc649e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/frontLayout/front_header.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/frontLayout/front_header.blade.php" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,29 +16,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="front_header.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/frontLayout/front_header.blade.php">
+      <file leaf-file-name="ProductsController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProductsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="44" column="36" lean-forward="false" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
+            <state relative-caret-position="-532">
+              <caret line="410" column="8" lean-forward="false" selection-start-line="410" selection-start-column="8" selection-end-line="410" selection-end-column="8" />
               <folding>
-                <marker date="1547564354162" expanded="true" signature="1608:1626" ph="..." />
-                <marker date="1547564354162" expanded="true" signature="3385:3402" ph="..." />
-                <marker date="1547564354162" expanded="true" signature="4508:4526" ph="..." />
-                <marker date="1547564354162" expanded="true" signature="4772:4795" ph="..." />
-                <marker date="1547564354162" expanded="true" signature="4848:4874" ph="..." />
-                <marker date="1547564354162" expanded="true" signature="4880:4890" ph="..." />
+                <element signature="e#40#57#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -124,8 +109,8 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/products/cart.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/frontLayout/front_header.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" />
       </list>
     </option>
   </component>
@@ -250,6 +235,24 @@
             <path>
               <item name="meroshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="meroshop" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="meroshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meroshop" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="meroshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meroshop" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="meroshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meroshop" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -358,18 +361,18 @@
       <workItem from="1547320334855" duration="21000" />
       <workItem from="1547370074032" duration="302000" />
       <workItem from="1547450113801" duration="3176000" />
-      <workItem from="1547556463128" duration="1830000" />
+      <workItem from="1547556463128" duration="2188000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92909000" />
+    <option name="totallyTimeSpent" value="93267000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29756796" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29756796" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -748,16 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProductsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="440" column="32" lean-forward="false" selection-start-line="440" selection-start-column="32" selection-end-line="440" selection-end-column="32" />
-          <folding>
-            <element signature="e#40#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/products/cart.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
@@ -787,14 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/frontLayout/front_header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
@@ -806,6 +791,24 @@
             <marker date="1547564354162" expanded="true" signature="4772:4795" ph="..." />
             <marker date="1547564354162" expanded="true" signature="4848:4874" ph="..." />
             <marker date="1547564354162" expanded="true" signature="4880:4890" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProductsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-532">
+          <caret line="410" column="8" lean-forward="false" selection-start-line="410" selection-start-column="8" selection-end-line="410" selection-end-column="8" />
+          <folding>
+            <element signature="e#40#57#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
