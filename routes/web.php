@@ -70,6 +70,7 @@ Route::group(['middleware' => ['auth']], function(){
 
 //    Banner Routes
     Route::match(['get', 'post'] , '/admin/add-banner', 'BannersController@addBanner')->name('add.banner');
+    Route::get('/admin/view-banners', 'BannersController@viewBanner')->name('view.banner');
 });
 
 
