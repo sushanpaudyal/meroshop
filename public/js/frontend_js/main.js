@@ -103,3 +103,41 @@ $('.toggle').on('click', function() {
         api2._init();
     }
 });
+
+
+
+// Validation for registration form
+
+$().ready(function () {
+    // validate register on keyup and submit
+    $("#registerForm").validate({
+         rules: {
+             name: {
+                required: true,
+                minLength: 2,
+             },
+             password: {
+                 required: true,
+                 minLength: 6
+             },
+             email:{
+                 required: true,
+                 email: true,
+                 remote: "/check-email"
+
+             },
+             messages:{
+                 name: "Please Enter Your Name",
+                 password: {
+                     required: "Please Provide Your Password",
+                     minLength: "Password must be more than 6 characters",
+                 },
+                 email:{
+                     required: "Please Enter Email",
+                     email: "Please Enter a valid email address",
+                     remote: "<span class='text-danger'> Already Exits </span>"
+                 }
+             }
+         }
+    });
+});

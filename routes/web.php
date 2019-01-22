@@ -30,6 +30,8 @@ Route::post('/cart/apply-coupon', 'ProductsController@applyCoupon')->name('apply
 
 Route::match(['get', 'post'], '/admin', 'AdminController@login');
 
+Route::match(['get', 'post'], '/check-email', 'UsersController@checkEmail');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
