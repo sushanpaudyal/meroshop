@@ -38,8 +38,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Register/Login
 
-Route::match(['get', 'post'], '/login-register', 'UsersController@register')->name('login.register');
+Route::get('/login-register', 'UsersController@userLoginregister');
+Route::post('/user-register', 'UsersController@register');
 
+//User Logout
+Route::get('/user-logout', 'UsersController@logout');
 
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/admin/dashboard', 'AdminController@dashboard');
