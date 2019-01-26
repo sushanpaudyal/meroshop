@@ -140,4 +140,12 @@ $().ready(function () {
              }
          }
     });
+
+
+    $('#myPassword').passtrength({
+        minChars: 4,
+        passwordToggle: true,
+        tooltip: true,
+        eyeImg : "http://localhost:8888/meroshop/public/images/frontend_images/eye.svg",
+    });
 });

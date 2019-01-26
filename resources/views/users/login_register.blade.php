@@ -35,7 +35,7 @@
                             @csrf
                             <input type="text" name="name" id="name" placeholder="Name"/>
                             <input type="email" name="email" id="email" placeholder="Email Address"/>
-                            <input type="password" id="password" name="password" placeholder="Password"/>
+                            <input type="password" id="myPassword" name="password" placeholder="Password"/>
                             <button type="submit" class="btn btn-default">Signup</button>
                         </form>
                     </div><!--/sign up form-->
