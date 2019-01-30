@@ -9,27 +9,27 @@
                     <div class="login-form"><!--login form-->
                         <h2>Bill To</h2>
                         <div class="form-group">
-                            <input type="text" placeholder="Billing Name" class="form-control" />
+                            <input type="text" placeholder="Billing Name" class="form-control" name="billing_name" id="billing_name" value="{{$userDetails->name}}" />
                         </div>
 
                         <div class="form-group">
-                            <input type="text" placeholder="Billing Address" class="form-control" />
+                            <input type="text" placeholder="Billing Address" class="form-control" name="billing_address" id="billing_address" value="{{$userDetails->address}}" />
                         </div>
 
                         <div class="form-group">
-                            <input type="text" placeholder="Billing City" class="form-control" />
+                            <input type="text" placeholder="Billing City" class="form-control" name="billing_city" id="billing_city" value="{{$userDetails->city}}" />
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Billing State" class="form-control" />
+                            <input type="text" placeholder="Billing State" class="form-control" name="billing_state" id="billing_state" value="{{$userDetails->state}}" />
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Billing Country" class="form-control" />
+                            <input type="text" placeholder="Billing Country" class="form-control" name="billing_country" id="billing_country" value="{{$userDetails->country}}" />
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Billing Pincode" class="form-control" />
+                            <input type="text" placeholder="Billing Pincode" class="form-control" name="billing_pincode" id="billing_pincode" value="{{$userDetails->pincode}}"/>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Billing Mobile" class="form-control" />
+                            <input type="text" placeholder="Billing Mobile" class="form-control" name="billing_mobile" id="billing_mobile" value="{{$userDetails->mobile}}"/>
                         </div>
 
 

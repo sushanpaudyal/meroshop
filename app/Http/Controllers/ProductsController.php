@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Product;
 use App\ProductsImage;
+use App\User;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use Session;
@@ -12,6 +13,7 @@ use Image;
 use App\ProductAttribute;
 use App\Coupon;
 use DB;
+use Auth;
 class ProductsController extends Controller
 {
     public function addProduct(Request $request){
@@ -480,7 +482,10 @@ class ProductsController extends Controller
 
 
     public function checkout(){
-        return view ('products.checkout');
+        $user_id = Auth::user()->id;
+        $userDetails = User::find($user_id);
+
+        return view ('products.checkout', compact('userDetails'));
     }
 
 }
