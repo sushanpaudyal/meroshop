@@ -120,4 +120,23 @@ class UsersController extends Controller
         }
     }
 
+
+
+    public function updatePassword(Request $request){
+        if($request->isMethod('post')){
+            $data = $request->all();
+//            echo "<pre>"; print_r($data); die;
+            $old_password = User::where('id', Auth::user()->id)->first();
+            $current_pwd = $data['current_pwd'];
+            if(Hash::check($current_pwd, $old_password->password)){
+                $new_pwd = bcrypt($data['new_pwd']);
+                User::where('id', Auth::user()->id)->update(['password' => $new_pwd]);
+                return redirect()->back()->with('flash_message_success', 'Password Changed Successfully');
+            } else {
+                return redirect()->back()->with('flash_message_error', 'Old Password Doesnot Match');
+            }
+
+        }
+    }
+
 }
