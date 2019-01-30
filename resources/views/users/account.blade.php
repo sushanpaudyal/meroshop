@@ -13,8 +13,18 @@
                 @endif
                 <div class="col-sm-4 col-sm-offset-1">
                     <div class="login-form"><!--login form-->
-                        <h2>Update Account</h2>
+                        <h2>Update PAssword</h2>
+                        <form action="{{url('/account/update-user-pwd')}}" id="passwordForm" name="passwordForm" method="post">
+                            @csrf
+                            <input type="password" name="current_pwd" id="current_pwd" placeholder="Current Password">
+                            <span id="chkPwd"></span>
 
+                            <input type="password" name="new_pwd" id="new_pwd" placeholder="New Password">
+
+                            <input type="password" name="confirm_pwd" id="confirm_pwd" placeholder="Confirm Password">
+
+                            <button type="submit" class="btn-default btn">Update Password</button>
+                        </form>
                     </div><!--/login form-->
                 </div>
                 <div class="col-sm-1">
@@ -22,7 +32,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="signup-form"><!--sign up form-->
-                        <h2>Update Password</h2>
+                        <h2>Update Account</h2>
                         <form action="{{url('/account')}}" id="accountForm" name="accountForm" method="post">
                             @csrf
                             <input type="text" name="name" id="name" placeholder="Name"  value="{{$userDetails->name}}"/>
