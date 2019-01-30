@@ -27,22 +27,22 @@
                             @csrf
                             <input type="text" name="name" id="name" placeholder="Name"  value="{{$userDetails->name}}"/>
 
-                            <input type="text" name="address" id="address" placeholder="Address"/>
+                            <input type="text" name="address" id="address" placeholder="Address " value="{{$userDetails->address}}"/>
 
-                            <input type="text" name="city" id="city" placeholder="City"/>
+                            <input type="text" name="city" id="city" placeholder="City" value="{{$userDetails->city}}"/>
 
-                            <input type="text" name="state" id="state" placeholder="State"/>
+                            <input type="text" name="state" id="state" placeholder="State" value="{{$userDetails->state}}"/>
 
                             <select name="country" id="country">
                                 <option value="">Select Country</option>
                                 @foreach($countries as $country)
-                                    <option value="{{$country->country_name}}">{{$country->country_name}}</option>
+                                    <option value="{{$country->country_name}}" @if($country->country_name == $userDetails->country) selected @endif>{{$country->country_name}}</option>
                                     @endforeach
                             </select>
 
-                            <input style="margin-top: 10px;" type="text" name="pincode" id="pincode" placeholder="Pin Code"/>
+                            <input style="margin-top: 10px;" type="text" name="pincode" id="pincode" placeholder="Pin Code" value="{{$userDetails->pincode}}"/>
 
-                            <input type="text" name="mobile" id="mobile" placeholder="Mobile"/>
+                            <input type="text" name="mobile" id="mobile" placeholder="Mobile" value="{{$userDetails->mobile}}"/>
 
                             <button type="submit" class="btn btn-default">Update</button>
 

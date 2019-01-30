@@ -66,10 +66,42 @@ class UsersController extends Controller
         }
     }
 
-    public function account(){
+    public function account(Request $request){
         $countries = Country::get();
         $user_id = Auth::user()->id;
         $userDetails = User::find($user_id);
+
+        if($request->isMethod('post')){
+            $data = $request->all();
+            $user = User::find($user_id);
+
+            if(empty($data['name'])){
+                return redirect()->back()->with('flash_message_error', 'Name is Required');
+            }
+
+            if(empty($data['address'])){
+                $data['address'] = "";
+            }
+
+            if(empty($data['city'])){
+                $data['city'] = "";
+            }
+
+            if(empty($data['state'])){
+                $data['state'] = "";
+            }
+
+            $user->name = $data['name'];
+            $user->address = $data['address'];
+            $user->city = $data['city'];
+            $user->state = $data['state'];
+            $user->country = $data['country'];
+            $user->pincode = $data['pincode'];
+            $user->mobile = $data['mobile'];
+            $user->save();
+            return redirect()->back()->with('flash_message_success', 'Account Updated Successfully');
+        }
+
         return view ('users.account', compact('countries', 'userDetails'));
     }
 
