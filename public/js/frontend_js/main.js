@@ -142,6 +142,29 @@ $().ready(function () {
     });
 
 
+    $("#loginForm").validate({
+        rules: {
+            password: {
+                required: true,
+            },
+            email:{
+                required: true,
+                email: true,
+
+            },
+            messages:{
+                password: {
+                    required: "Please Provide Your Password",
+                },
+                email:{
+                    required: "Please Enter Email",
+                    email: "Please Enter a valid email address",
+                }
+            }
+        }
+    });
+
+
     $('#myPassword').passtrength({
         minChars: 4,
         passwordToggle: true,

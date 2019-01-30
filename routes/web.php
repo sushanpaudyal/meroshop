@@ -41,6 +41,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/login-register', 'UsersController@userLoginregister');
 Route::post('/user-register', 'UsersController@register');
 
+
+Route::post('/user-login', 'UsersController@login');
+
 //User Logout
 Route::get('/user-logout', 'UsersController@logout');
 

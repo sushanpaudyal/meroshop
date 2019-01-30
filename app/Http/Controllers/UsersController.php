@@ -49,4 +49,16 @@ class UsersController extends Controller
         return redirect('/');
     }
 
+
+    public function login(Request $request){
+        if($request->isMethod('post')){
+            $data = $request->all();
+            if(Auth::attempt(['email' => $data['email'], 'password' => $data['password']])){
+                return redirect('/cart');
+            } else {
+                return redirect()->back()->with('flash_message_error', 'Invalid Username or Password');
+            }
+        }
+    }
+
 }
