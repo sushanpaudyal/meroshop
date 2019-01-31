@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="245d0799-959e-4a7b-a6b4-c7f4cbbc649e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/public/js/frontend_js/main.js" afterPath="$PROJECT_DIR$/public/js/frontend_js/main.js" />
+      <change beforePath="$PROJECT_DIR$/resources/views/products/checkout.blade.php" afterPath="$PROJECT_DIR$/resources/views/products/checkout.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,11 +17,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="2019_01_31_183108_create_delivery_addresses_table.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_31_183108_create_delivery_addresses_table.php">
+      <file leaf-file-name="checkout.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/products/checkout.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="26" selection-end-column="33" />
+            <state relative-caret-position="658">
+              <caret line="77" column="22" lean-forward="true" selection-start-line="45" selection-start-column="16" selection-end-line="77" selection-end-column="22" />
+              <folding>
+                <marker date="1548960312097" expanded="true" signature="9:43" ph="..." />
+                <marker date="1548960312097" expanded="true" signature="54:63" ph="..." />
+                <marker date="1548960312097" expanded="true" signature="567:585" ph="..." />
+                <marker date="1548960312097" expanded="true" signature="824:838" ph="..." />
+                <marker date="1548960312097" expanded="true" signature="824:845" ph="..." />
+                <marker date="1548960312097" expanded="true" signature="1075:1093" ph="..." />
+                <marker date="1548960312097" expanded="true" signature="1325:1344" ph="..." />
+                <marker date="1548960312097" expanded="true" signature="1582:1603" ph="..." />
+                <marker date="1548960312097" expanded="true" signature="1841:1862" ph="..." />
+                <marker date="1548960312097" expanded="true" signature="2096:2116" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/frontend_js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="679">
+              <caret line="254" column="7" lean-forward="true" selection-start-line="233" selection-start-column="4" selection-end-line="254" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -104,14 +126,14 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/frontLayout/front_header.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_30_131205_add_country_column_to_users_table.php" />
         <option value="$PROJECT_DIR$/app/Country.php" />
-        <option value="$PROJECT_DIR$/public/js/frontend_js/main.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" />
         <option value="$PROJECT_DIR$/resources/views/users/account.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/products/cart.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" />
-        <option value="$PROJECT_DIR$/resources/views/products/checkout.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_31_183108_create_delivery_addresses_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/products/checkout.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/frontend_js/main.js" />
       </list>
     </option>
   </component>
@@ -420,12 +442,12 @@
       <workItem from="1548529739740" duration="3644000" />
       <workItem from="1548845296154" duration="315000" />
       <workItem from="1548851554037" duration="9591000" />
-      <workItem from="1548958569433" duration="543000" />
+      <workItem from="1548958569433" duration="1461000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115954000" />
+    <option name="totallyTimeSpent" value="116872000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -440,7 +462,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.286578" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.286578" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -769,13 +791,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/frontend_js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="166" column="4" lean-forward="false" selection-start-line="166" selection-start-column="4" selection-end-line="194" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/users/account.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -826,29 +841,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/products/checkout.blade.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_31_183108_create_delivery_addresses_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="27" column="48" lean-forward="false" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/products/checkout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="658">
+          <caret line="77" column="22" lean-forward="true" selection-start-line="45" selection-start-column="16" selection-end-line="77" selection-end-column="22" />
           <folding>
-            <marker date="1548868373647" expanded="true" signature="9:43" ph="..." />
-            <marker date="1548868373647" expanded="true" signature="54:63" ph="..." />
-            <marker date="1548868373647" expanded="true" signature="567:585" ph="..." />
-            <marker date="1548868373647" expanded="true" signature="824:838" ph="..." />
-            <marker date="1548868373647" expanded="true" signature="824:845" ph="..." />
-            <marker date="1548868373647" expanded="true" signature="1075:1093" ph="..." />
-            <marker date="1548868373647" expanded="true" signature="1325:1344" ph="..." />
-            <marker date="1548868373647" expanded="true" signature="1582:1603" ph="..." />
-            <marker date="1548868373647" expanded="true" signature="1841:1862" ph="..." />
-            <marker date="1548868373647" expanded="true" signature="2096:2116" ph="..." />
+            <marker date="1548960312097" expanded="true" signature="9:43" ph="..." />
+            <marker date="1548960312097" expanded="true" signature="54:63" ph="..." />
+            <marker date="1548960312097" expanded="true" signature="567:585" ph="..." />
+            <marker date="1548960312097" expanded="true" signature="824:838" ph="..." />
+            <marker date="1548960312097" expanded="true" signature="824:845" ph="..." />
+            <marker date="1548960312097" expanded="true" signature="1075:1093" ph="..." />
+            <marker date="1548960312097" expanded="true" signature="1325:1344" ph="..." />
+            <marker date="1548960312097" expanded="true" signature="1582:1603" ph="..." />
+            <marker date="1548960312097" expanded="true" signature="1841:1862" ph="..." />
+            <marker date="1548960312097" expanded="true" signature="2096:2116" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_31_183108_create_delivery_addresses_table.php">
+    <entry file="file://$PROJECT_DIR$/public/js/frontend_js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="26" selection-end-column="33" />
+        <state relative-caret-position="679">
+          <caret line="254" column="7" lean-forward="true" selection-start-line="233" selection-start-column="4" selection-end-line="254" selection-end-column="7" />
           <folding />
         </state>
       </provider>

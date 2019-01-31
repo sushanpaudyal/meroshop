@@ -34,7 +34,7 @@
 
 
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="billtoship">
+                            <input type="checkbox" class="form-check-input" id="copyAddress">
                             <label for="billtoship" class="form-check-label">Shipping Address Same as Billing</label>
                         </div>
 
@@ -48,27 +48,27 @@
                         <h2>Ship To</h2>
                         <form action="#">
                             <div class="form-group">
-                                <input type="text" placeholder="Shipping Name" class="form-control" />
+                                <input type="text" placeholder="Shipping Name" id="shipping_name" name="shipping_name" class="form-control" />
                             </div>
 
                             <div class="form-group">
-                                <input type="text" placeholder="Shipping Address" class="form-control" />
+                                <input type="text" placeholder="Shipping Address" id="shipping_address" name="shipping_address" class="form-control" />
                             </div>
 
                             <div class="form-group">
-                                <input type="text" placeholder="Shipping City" class="form-control" />
+                                <input type="text" placeholder="Shipping City" id="shipping_city" name="shipping_city" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Shipping State" class="form-control" />
+                                <input type="text" placeholder="Shipping State" id="shipping_state" name="shipping_state" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Shipping Country" class="form-control" />
+                                <input type="text" placeholder="Shipping Country" id="shipping_country" name="shipping_country" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Shipping Pincode" class="form-control" />
+                                <input type="text" placeholder="Shipping Pincode" id="shipping_pincode" name="shipping_pincode" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Shipping Mobile" class="form-control" />
+                                <input type="text" placeholder="Shipping Mobile" id="shipping_mobile" name="shipping_mobile" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success">Checkout</button>
