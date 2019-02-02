@@ -1,9 +1,22 @@
 @extends('layouts.frontLayout.front_design')
 @section('content')
 
+    @if(Session::has('flash_message_error'))
+        <div class="alert alert-error alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong class="text-danger">{!! session('flash_message_error') !!}</strong>
+        </div>
+    @endif
+    @if(Session::has('flash_message_success'))
+        <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>{!! session('flash_message_success') !!}</strong>
+        </div>
+    @endif
     <section id="form" style="margin-top:20px;"><!--form-->
         <div class="container">
-            <form action="#">
+            <form action="{{url('checkout')}}" method="post">
+                @csrf
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-1">
                     <div class="login-form"><!--login form-->
@@ -46,34 +59,32 @@
                 <div class="col-sm-4">
                     <div class="signup-form"><!--sign up form-->
                         <h2>Ship To</h2>
-                        <form action="#">
                             <div class="form-group">
-                                <input type="text" placeholder="Shipping Name" id="shipping_name" name="shipping_name" class="form-control" />
+                                <input type="text" placeholder="Shipping Name" id="shipping_name" name="shipping_name" class="form-control" value="{{$shippingDetails->name}}"/>
                             </div>
 
                             <div class="form-group">
-                                <input type="text" placeholder="Shipping Address" id="shipping_address" name="shipping_address" class="form-control" />
+                                <input type="text" placeholder="Shipping Address" id="shipping_address" name="shipping_address" value="{{$shippingDetails->address}}" class="form-control" />
                             </div>
 
                             <div class="form-group">
-                                <input type="text" placeholder="Shipping City" id="shipping_city" name="shipping_city" class="form-control" />
+                                <input type="text" placeholder="Shipping City" id="shipping_city" name="shipping_city" value="{{$shippingDetails->city}}" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Shipping State" id="shipping_state" name="shipping_state" class="form-control" />
+                                <input type="text" placeholder="Shipping State" id="shipping_state" name="shipping_state" value="{{$shippingDetails->state}}" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Shipping Country" id="shipping_country" name="shipping_country" class="form-control" />
+                                <input type="text" placeholder="Shipping Country" id="shipping_country" name="shipping_country" value="{{$shippingDetails->country}}"class="form-control" />
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Shipping Pincode" id="shipping_pincode" name="shipping_pincode" class="form-control" />
+                                <input type="text" placeholder="Shipping Pincode" id="shipping_pincode" name="shipping_pincode" value="{{$shippingDetails->pincode}}" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Shipping Mobile" id="shipping_mobile" name="shipping_mobile" class="form-control" />
+                                <input type="text" placeholder="Shipping Mobile" id="shipping_mobile" name="shipping_mobile" value="{{$shippingDetails->mobile}}" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success">Checkout</button>
                             </div>
-                        </form>
                     </div><!--/sign up form-->
                 </div>
             </div>
