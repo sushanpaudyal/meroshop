@@ -549,7 +549,14 @@ class ProductsController extends Controller
         $user_email = Auth::user()->email;
         $shippingDetails = DeliveryAddress::where('user_id', $user_id)->first();
 
-        return view ('products.order_review', compact('userDetails', 'shippingDetails'));
+        $userCart = DB::table('cart')->where(['user_email' => $user_email])->get();
+
+        foreach($userCart as $key => $product){
+            $productDetails = Product::where('id', $product->product_id)->first();
+            $userCart[$key]->image = $productDetails->image;
+        }
+
+        return view ('products.order_review', compact('userDetails', 'shippingDetails' , 'userCart'));
     }
 
 }
