@@ -485,6 +485,7 @@ class ProductsController extends Controller
     public function checkout(Request $request){
         $user_id = Auth::user()->id;
         $userDetails = User::find($user_id);
+        $user_email = Auth::user()->email;
 
         // check if shipping address exists
 
@@ -492,6 +493,12 @@ class ProductsController extends Controller
         if($shippingCount > 0){
             $shippingDetails = DeliveryAddress::where('user_id', $user_id)->first();
         }
+
+
+        //update cart table with user email
+        $session_id = Session::get('session_id');
+        DB::table('cart')->where(['session_id' => $session_id])->update(['user_email' => $user_email ]);
+
 
         if($request->isMethod('post')){
             $data = $request->all();
@@ -526,13 +533,23 @@ class ProductsController extends Controller
                 $shipping->mobile = $data['shipping_mobile'];
                 $shipping->save();
 
-                echo "Redirect to Order Review Page"; die;
-
-
             }
+
+            return redirect()->route('orderreview');
         }
 
         return view ('products.checkout', compact('userDetails', 'shippingDetails'));
+    }
+
+
+
+    public function orderReview(Request $request){
+        $user_id = Auth::user()->id;
+        $userDetails = User::find($user_id);
+        $user_email = Auth::user()->email;
+        $shippingDetails = DeliveryAddress::where('user_id', $user_id)->first();
+
+        return view ('products.order_review', compact('userDetails', 'shippingDetails'));
     }
 
 }
