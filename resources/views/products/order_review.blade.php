@@ -112,7 +112,7 @@
                     </tr>
                     </thead>
                     <tbody>
-
+                    <?php $total_amount = 0 ; ?>
                     @foreach($userCart as $cart)
                     <tr>
                         <td class="cart_product">
@@ -135,6 +135,8 @@
                         </td>
 
                     </tr>
+
+                        <?php $total_amount = $total_amount + ($cart->price * $cart->quantity); ?>
 @endforeach
 
                     <tr>
@@ -143,19 +145,26 @@
                             <table class="table table-condensed total-result">
                                 <tr>
                                     <td>Cart Sub Total</td>
-                                    <td>$59</td>
+                                    <td>Rs. {{$total_amount}}</td>
                                 </tr>
-                                <tr>
-                                    <td>Exo Tax</td>
-                                    <td>$2</td>
-                                </tr>
+
                                 <tr class="shipping-cost">
                                     <td>Shipping Cost</td>
                                     <td>Free</td>
                                 </tr>
+
+                                <tr class="shipping-cost">
+                                    <td>Discount Amount</td>
+                                    @if(!empty(Session::get('CouponAmount')))
+                                        <td><?php echo Session::get('CouponAmount'); ?></td>
+                                        @else
+                                        <td>0</td>
+                                        @endif
+                                </tr>
+
                                 <tr>
                                     <td>Total</td>
-                                    <td><span>$61</span></td>
+                                    <td><span>Rs. <?php echo $total_amount - Session::get('CouponAmount'); ?></span></td>
                                 </tr>
                             </table>
                         </td>
