@@ -255,3 +255,12 @@ $().ready(function () {
     });
 
 });
+
+
+function selectPaymentMethod(){
+   if($('#paypal').is(':checked') || ($('#COD').is(':checked'))){
+   } else {
+       alert("Please Select The Payment Method");
+       return false;
+   }
+}

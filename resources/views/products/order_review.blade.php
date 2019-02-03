@@ -164,7 +164,7 @@
 
                                 <tr>
                                     <td>Total</td>
-                                    <td><span>Rs. <?php echo $total_amount - Session::get('CouponAmount'); ?></span></td>
+                                    <td><span>Rs. <?php echo $grand_total = $total_amount - Session::get('CouponAmount'); ?></span></td>
                                 </tr>
                             </table>
                         </td>
@@ -172,17 +172,26 @@
                     </tbody>
                 </table>
             </div>
+
+            <form action="{{url('/place-order')}}" name="paymentForm" id="paymentForm" method="post">
+                @csrf
+                <input type="hidden" name="grand_total" value="{{$grand_total}}">
             <div class="payment-options">
 					<span>
-						<label><input type="checkbox"> Direct Bank Transfer</label>
+						<label> Select Payment Method</label>
 					</span>
                 <span>
-						<label><input type="checkbox"> Check Payment</label>
+						<label><input type="radio" name="payment_method" id="COD" value="COD"> Cash on Delivery</label>
 					</span>
                 <span>
-						<label><input type="checkbox"> Paypal</label>
+						<label><input type="radio" name="payment_method" id="paypal" value="Paypal"> Paypal</label>
 					</span>
+                <span style="float: right;">
+                    <button type="submit" class="btn btn-primary" onclick="return selectPaymentMethod();">Place Order</button>
+                </span>
             </div>
+            </form>
+
         </div>
     </section> <!--/#cart_items-->
 

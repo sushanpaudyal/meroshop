@@ -559,4 +559,12 @@ class ProductsController extends Controller
         return view ('products.order_review', compact('userDetails', 'shippingDetails' , 'userCart'));
     }
 
+
+    public function placeOrder(Request $request){
+        if($request->isMethod('post')){
+            $data = $request->all();
+            echo "<pre>"; print_r($data); die;
+        }
+    }
+
 }
