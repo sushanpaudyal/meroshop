@@ -397,8 +397,15 @@ class ProductsController extends Controller
     public function cart(){
 
 
-        $sesion_id = Session::get('session_id');
-        $userCart = DB::table('cart')->where(['session_id' => $sesion_id])->get();
+
+        if(Auth::check()){
+            $user_email = Auth::user()->email;
+            $userCart = DB::table('cart')->where(['user_email' => $user_email])->get();
+        } else {
+            $sesion_id = Session::get('session_id');
+            $userCart = DB::table('cart')->where(['session_id' => $sesion_id])->get();
+        }
+
 
         foreach($userCart as $key => $product){
             $productDetails = Product::where('id', $product->product_id)->first();
