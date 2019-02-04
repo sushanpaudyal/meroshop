@@ -110,6 +110,9 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/admin/view-banners', 'BannersController@viewBanner')->name('view.banner');
     Route::match(['get', 'post'], '/admin/edit-banner/{id}', 'BannersController@editBanner')->name('edit.banner');
     Route::get('/admin/delete-banner/{id}', 'BannersController@deleteBanner')->name('delete.banner');
+
+//    Orders Routes
+    Route::get('/admin/view-orders', 'ProductsController@viewOrders')->name('view.order');
 });
 
 

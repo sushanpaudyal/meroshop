@@ -676,4 +676,10 @@ class ProductsController extends Controller
         return view ('products.paypal');
     }
 
+
+    public function viewOrders(){
+        $orders = Order::with('orders')->latest()->get();
+        return view ('admin.orders.view_orders', compact('orders'));
+    }
+
 }
