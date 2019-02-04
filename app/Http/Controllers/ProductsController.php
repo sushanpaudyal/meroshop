@@ -672,4 +672,8 @@ class ProductsController extends Controller
         return view ('products.user_order_details', compact('orderDetails'));
     }
 
+    public function paypal(){
+        return view ('products.paypal');
+    }
+
 }

@@ -68,6 +68,8 @@ Route::group(['middleware' => ['frontlogin']], function(){
 
     Route::get('/orders/{id}','ProductsController@userOrderDetails');
 
+    Route::get('/paypal','ProductsController@paypal')->name('paypal');
+
 });
 
 Route::group(['middleware' => ['auth']], function(){
