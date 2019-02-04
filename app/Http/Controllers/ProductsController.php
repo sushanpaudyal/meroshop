@@ -646,8 +646,15 @@ class ProductsController extends Controller
                 $cartPro->save();
             }
 
+            Session::put('order_id', $order_id);
+            Session::put('grand_total', $data['grand_total']);
 
+            return redirect()->route('thanks');
         }
+    }
+
+    public function thanks(){
+        return view ('products.thanks');
     }
 
 }
