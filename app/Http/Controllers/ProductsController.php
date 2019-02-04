@@ -369,10 +369,15 @@ class ProductsController extends Controller
         Session::forget('CouponCode');
 
         $data = $request->all();
-        if(empty($data['user_email'])){
+
+        if(empty(Auth::user()->email)){
             $data['user_email'] = "";
+        } else {
+            $data['user_email'] = Auth::user()->email();
         }
+
         $session_id = Session::get('session_id');
+
         if(empty($session_id)){
             $session_id = str_random(40);
             Session::put('session_id', $session_id);
