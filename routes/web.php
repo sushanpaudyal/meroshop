@@ -66,6 +66,8 @@ Route::group(['middleware' => ['frontlogin']], function(){
 
     Route::get('/orders','ProductsController@userOrders')->name('orders');
 
+    Route::get('/orders/{id}','ProductsController@userOrderDetails');
+
 });
 
 Route::group(['middleware' => ['auth']], function(){

@@ -666,4 +666,10 @@ class ProductsController extends Controller
         return view ('products.users_orders', compact('orders'));
     }
 
+    public function userOrderDetails($order_id){
+        $user_id = Auth::user()->id;
+        $orderDetails = Order::with('orders')->where('user_id', $user_id)->first();
+        return view ('products.user_order_details', compact('orderDetails'));
+    }
+
 }
