@@ -4,7 +4,6 @@
     <list default="true" id="245d0799-959e-4a7b-a6b4-c7f4cbbc649e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,8 +20,8 @@
       <file leaf-file-name="ProductsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProductsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="651" column="47" lean-forward="true" selection-start-line="648" selection-start-column="12" selection-end-line="651" selection-end-column="47" />
+            <state relative-caret-position="573">
+              <caret line="656" column="41" lean-forward="true" selection-start-line="656" selection-start-column="41" selection-end-line="656" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -32,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/products/thanks.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="9" column="21" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="2" />
+              <caret line="9" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="2" />
               <folding>
                 <marker date="1549295376090" expanded="true" signature="9:43" ph="..." />
                 <marker date="1549295376090" expanded="true" signature="54:63" ph="..." />
@@ -138,8 +137,8 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_02_03_174427_create_orders_table.php" />
         <option value="$PROJECT_DIR$/resources/views/products/checkout.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" />
         <option value="$PROJECT_DIR$/resources/views/products/thanks.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" />
       </list>
     </option>
   </component>
@@ -447,12 +446,12 @@
       <workItem from="1548958569433" duration="1525000" />
       <workItem from="1549123525637" duration="2611000" />
       <workItem from="1549210666842" duration="7345000" />
-      <workItem from="1549292165079" duration="1027000" />
+      <workItem from="1549292165079" duration="1235000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127919000" />
+    <option name="totallyTimeSpent" value="128127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -849,7 +848,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/products/thanks.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="21" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="2" />
+          <caret line="9" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="2" />
           <folding>
             <marker date="1549295376090" expanded="true" signature="9:43" ph="..." />
             <marker date="1549295376090" expanded="true" signature="54:63" ph="..." />
@@ -861,8 +860,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProductsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="651" column="47" lean-forward="true" selection-start-line="648" selection-start-column="12" selection-end-line="651" selection-end-column="47" />
+        <state relative-caret-position="573">
+          <caret line="656" column="41" lean-forward="true" selection-start-line="656" selection-start-column="41" selection-end-line="656" selection-end-column="41" />
           <folding />
         </state>
       </provider>

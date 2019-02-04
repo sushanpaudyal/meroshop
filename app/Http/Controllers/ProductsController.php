@@ -654,6 +654,8 @@ class ProductsController extends Controller
     }
 
     public function thanks(){
+        $user_email = Auth::user()->email;
+        DB::table('cart')->where('user_email', $user_email)->delete();
         return view ('products.thanks');
     }
 
